@@ -1,6 +1,7 @@
 package com.rajamani.bms.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
@@ -26,6 +27,6 @@ public class Article {
     @Field(type = FieldType.Nested)
     private User author;
 
-    @Field(type = FieldType.Date)
+    @Field(type = FieldType.Date, format = DateFormat.date)
     private Date createdDate = new Date();
 }
